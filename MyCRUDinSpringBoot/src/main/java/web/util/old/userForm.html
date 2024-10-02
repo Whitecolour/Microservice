@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${user.id == null ? 'Создание нового пользователя' : 'Редактирование пользователя'}">Форма пользователя</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center" th:text="${user.id == null ? 'Создание нового пользователя' : 'Редактирование пользователя'}"></h1>
+    <form th:action="@{${user.id == null ? '/users/create' : '/users/' + user.id + '/edit'}}" th:object="${user}" method="post">
+        <div class="form-group">
+            <label for="name">Имя пользователя</label>
+            <input type="text" id="name" th:field="*{name}" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Фамилия</label>
+            <input type="text" id="lastName" th:field="*{lastName}" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="age">Возраст</label>
+            <input type="number" id="age" th:field="*{age}" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+        <a class="btn btn-secondary" href="/users">Отмена</a>
+    </form>
+</div>
+</body>
+</html>

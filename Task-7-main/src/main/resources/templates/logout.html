@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Logout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px; /* Ширина контейнера */
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF; /* Цвет ссылки */
+            padding: 10px 15px;
+            border: 1px solid #007BFF;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s; /* Плавный переход */
+        }
+
+        a:hover {
+            background-color: #007BFF; /* Цвет фона при наведении */
+            color: white; /* Цвет текста при наведении */
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>You have been logged out</h1>
+    <p>Thank you for using our service. We hope to see you again!</p>
+    <a href="/login">Login Again</a> <!-- Ссылка для возврата на страницу входа -->
+</div>
+</body>
+</html>
